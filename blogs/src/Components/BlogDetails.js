@@ -1,8 +1,9 @@
 import useFetch from "../Hooks/useFetch";
-import { useParams } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 const BlogDetails = () => {
     const { id } = useParams();
     const { data: blog } = useFetch('http://localhost:8000/blogs/' + id);
+    const history=useHistory();
     
     const handleClick=() => {
 
@@ -10,6 +11,7 @@ const BlogDetails = () => {
             method: 'DELETE'
         }).then(() => {
             console.log('blog deleted');
+            history.push('/');
         })
     }
     return (

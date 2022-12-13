@@ -4,7 +4,7 @@ import BlogList from "./BlogList";
 const Home = () => {
     
     const {data:blogs}=useFetch('http://localhost:8000/blogs');
-        console.log(blogs);
+        // console.log(blogs);
     return ( 
         <div className="home">
         {  blogs&&<BlogList blogs={blogs} title="All Blogs"/>}
